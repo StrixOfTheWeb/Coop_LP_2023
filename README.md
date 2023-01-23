@@ -1,6 +1,7 @@
 # coop
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a school project, so it's of no use for anyone that stumbled here on accident/curiosity.
+Et pour vous monsieur, j'espère que l'absence d'historique de version ne vous possera pas de soucis.
 
 ## Recommended IDE Setup
 
