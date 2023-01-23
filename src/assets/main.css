@@ -1,0 +1,45 @@
+@import './base.css';
+
+*{
+	background-color : rgb(153, 0, 255);
+	color : white;
+	text-align : center;
+}
+
+header * {
+	color : rgb(179, 255, 0);
+	font-size : 5em;
+}
+
+section {
+	padding : 1em;
+	margin : 2em;
+	border-style : dotted;
+	border-color : rgb(247, 0, 255);
+	border-width : 2px;
+	max-width : 50%;
+	margin-left : 25%;
+}
+section * {
+	background-color : rgb(159, 90, 238);
+	list-style-type: none;
+	text-decoration: none;
+}
+section div {
+	list-style-type: none;
+}
+section div * {
+    color: rgb(46, 16, 16);
+    list-style-type: none;
+}
+
+div nav nav {
+    background-color: black;
+}
+div nav nav * {
+    background-color: black;
+    color: aquamarine;
+    margin : 4px;
+    
+}
+
