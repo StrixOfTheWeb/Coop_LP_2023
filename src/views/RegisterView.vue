@@ -17,11 +17,11 @@ let member = reactive({
   fullname: '',
   email: '',
   password: '',
-  2password: ''
+  passwordd: ''
 })
 
 function register() {
-  if(member.password == member.2password) {
+  if(member.password == member.passwordd) {
     api.post('members', {
       body : member
       }).then(response => {
@@ -65,7 +65,7 @@ function register() {
 
       <div>
         <label for="password">Valider Mot de Passe : </label>
-        <input v-model="member.2password" type="password" id="2password" name="2password" required>
+        <input v-model="member.passwordd" type="password" id="passwordd" name="passwordd" required>
       </div>
 
       <div>
