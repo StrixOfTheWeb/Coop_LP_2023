@@ -21,7 +21,7 @@ onMounted(() => {
       if (response.message) {
         alert(response.message);
       } else {
-        console.log(response);
+        //console.log(response);
         session.members = response;
       }
 
@@ -42,7 +42,7 @@ onMounted(() => {
             });
           });
 
-          console.log(data.names);
+          //console.log(data.names);
         }	
       })
 

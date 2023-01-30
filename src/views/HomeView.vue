@@ -29,8 +29,15 @@ onMounted(() => {
       <nav><br/>
         <li v-for="talk in data.talks">
         <router-link :to="{name: 'talks',params:{id: talk.id}}">
-        <span>-------<br/>{{talk.label}}, denièrement édité à {{talk.modified_at}} <br/> {{talk.topic}}<br/>-------</span>
+        <span><br/>-------<br/>{{talk.label}}, denièrement édité à {{talk.modified_at}} <br/> {{talk.topic}}<br/>-------<p></p></span>
         </router-link>
+        <div style = "float : right;">
+        <router-link :to="{name: 'del_talks',params:{id: talk.id}}">
+          Supprimer Conversation <img style = "max-height : 4%; max-width: 4%;" src="../assets/delete_icon.jpg">
+        </router-link><router-link :to="{name: 'edit_talks',params:{id: talk.id,label: talk.label, topic : talk.topic}}">
+          Modifier Conversation <img style = "max-height : 4%; max-width: 4%;" src="../assets/edit_icon.jpg">
+        </router-link>
+        </div>
         </li>
       </nav><br/>
       </section>

@@ -40,6 +40,16 @@ const router = createRouter({
       component: () => import('../views/TalksView.vue')
     },
     {
+      path: '/del_talks/:id',
+      name: 'del_talks',
+      component: () => import('../views/DeleteTalksView.vue')
+    },
+    {
+      path: '/edit_talks/:id',
+      name: 'edit_talks',
+      component: () => import('../views/EditTalksView.vue')
+    },
+    {
       path: '/posts',
       name: 'posts',
       component: () => import('../views/PostsView.vue')
