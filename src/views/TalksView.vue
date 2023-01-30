@@ -13,30 +13,42 @@ let data = reactive({
 
 onMounted(() => {
   api.get('ping').then(response => {
-    console.log("L'api fonctionne !")
+    console.log("L'api fonctionne !");
   })
   if (session.TestLegitime()) {
 
-    
-    api.get(`channels/${router.currentRoute.value.params.id}/posts?token=${token}`).then(response => {
+    api.get('members', {}).then(response => {
       if (response.message) {
         alert(response.message);
       } else {
-        data.messages = response;
+        console.log(response);
+        session.members = response;
+      }
+
+      api.get(`channels/${router.currentRoute.value.params.id}/posts?token=${token}`).then(response => {
+        if (response.message) {
+          alert(response.message);
+        } else {
+          data.messages = response;
         
-        data.messages.forEach((mes) => {
-          session.members.forEach((member) => {
-            if(mes.member_id == member.id) {
-              //console.log("!");
-              data.names[member.id] = member.name;
+          data.messages.forEach((mes) => {
+            session.members.forEach((member) => {
+              //console.log(member.fullname);
+              if(mes.member_id == member.id) {
+                
+                data.names[member.id] = member.fullname;
 
-            }
+              }
+            });
           });
-        });
 
-        console.log(data.names);
-      }	
+          console.log(data.names);
+        }	
+      })
+
     })
+
+    
   }
 })
 
